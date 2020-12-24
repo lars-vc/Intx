@@ -1,3 +1,3 @@
-from Intx import intx
+from Intx.intx import intx
 
 intx(5)

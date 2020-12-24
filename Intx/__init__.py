@@ -1,2 +1,1 @@
-from Intx import intx
-intx(5)
+from Intx.intx import intx

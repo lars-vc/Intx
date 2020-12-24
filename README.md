@@ -2,7 +2,7 @@
 An extension to the base integer type of python. Has features like iterating over integers (including: appending, inserting, popping) and handy stuff like isPrime() etc.
 
 ## Installing
-You can get the package by doing `pip install intx` or `python3 -m pip install intx`
+You can get the package by doing `pip install Intx` or `python3 -m pip install Intx`
 
 ## Use cases
 ```python

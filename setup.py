@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="Intx",
-    version="0.0.1",
+    version="0.0.2",
     author="Lars Van Cauter",
     author_email="larsvancauter@gmail.com",
     description="An extension to the base type int with some handy functions",
