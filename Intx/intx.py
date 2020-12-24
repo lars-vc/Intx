@@ -20,7 +20,7 @@ class intx:
 
         else:
             raise ValueError(
-                f"Tried intx({arg})\n{arg} has to be int, intx, str, float, list, tuple or set\nWas: {type(arg)}")
+                f"Tried Intx({arg})\n{arg} has to be int, Intx, str, float, list, tuple or set\nWas: {type(arg)}")
 
     def __int__(self):
         return self.val
@@ -29,102 +29,102 @@ class intx:
 
     def __add__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(self.val + int(other))
 
     def __radd__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(self.val + int(other))
 
     def __sub__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(self.val - int(other))
 
     def __rsub__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(intx(other).__sub__(self))
 
     def __mul__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(self.val * int(other))
 
     def __rmul__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(int(other) * self.val)
 
     def __truediv__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(self.val / int(other))
 
     def __rtruediv__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(int(other) / self.val)
 
     def __floordiv__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(self.val // int(other))
 
     def __rfloordiv__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(int(other) // self.val)
 
     def __mod__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(self.val % int(other))
 
     def __rmod__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(other % self.val)
 
     def __pow__(self, power, modulo=None):
         if not isinstance(power, (int, intx)):
-            raise TypeError(f"Can't use {type(power)} as intx")
+            raise TypeError(f"Can't use {type(power)} as Intx")
         return intx(self.val ** int(power))
 
     def __rpow__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return intx(int(other) ** self.val)
 
     def __eq__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return self.val == int(other)
 
     def __ne__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return self.val != int(other)
 
     def __lt__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return self.val < int(other)
 
     def __le__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return self.val <= int(other)
 
     def __gt__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return self.val > int(other)
 
     def __ge__(self, other):
         if not isinstance(other, (int, intx)):
-            raise TypeError(f"Can't use {type(other)} as intx")
+            raise TypeError(f"Can't use {type(other)} as Intx")
         return self.val >= int(other)
 
     def __neg__(self):
@@ -261,7 +261,7 @@ class intx:
 
     def insert(self, pos: int, num):
         if self.val is None:
-            raise IndexError("Empty intx")
+            raise IndexError("Empty Intx")
         lis = list(str(self.val))
         lis.insert(pos, str(int(num)))
         self.val = int("".join(lis))
@@ -282,11 +282,11 @@ class intx:
                 val2 = self[i+1:]
                 if val is None:
                     if val2 is None:
-                        raise ValueError("Can't have empty intx")
+                        raise ValueError("Can't have empty Intx")
                     self.val = self[i+1:]
                 elif val2 is None:
                     if val is None:
-                        raise ValueError("Can't have empty intx")
+                        raise ValueError("Can't have empty Intx")
                     self.val = self[:i]
                 else:
                     self.val = self[:i] & self[i + 1:]
