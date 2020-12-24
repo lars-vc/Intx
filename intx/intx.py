@@ -246,6 +246,19 @@ class intx:
                 #total += "0 + "
         return total[:-3]
 
+    def pysplit(self, base: int = 10):
+        num = self // base
+        new = str(self % base)
+        while num != 0:
+            new += str(num % base)
+            num //= base
+
+        total = ""
+        for i in range(len(new) - 1, -1, -1):
+            if int(new[i]) != 0:
+                total += f"({new[i]} * ({base} **{i})) + "
+        return total[:-3]
+
     def insert(self, pos: int, num):
         if self.val is None:
             raise IndexError("Empty intx")
