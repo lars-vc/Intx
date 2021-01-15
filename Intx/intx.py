@@ -222,7 +222,7 @@ class intx:
             f += 6
         return True, None
 
-    def dividers(self):
+    def divisors(self):
         total = []
         for i in range(1, (self.val // 2) + 1):
             if self.val % i == 0:
