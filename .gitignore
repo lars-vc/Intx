@@ -130,3 +130,5 @@ dmypy.json
 
 # Secret token
 APItoken.txt
+
+.idea
